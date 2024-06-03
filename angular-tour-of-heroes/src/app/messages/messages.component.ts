@@ -1,14 +1,20 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MessageService } from '../message.service';
-import { CommonModule, NgIf, NgForOf } from '@angular/common';
+import { NgFor, CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-messages',
   standalone: true,
-  imports: [NgIf, NgForOf],
+  imports: [NgFor, CommonModule],
   templateUrl: './messages.component.html',
-  styleUrl: './messages.component.css',
+  styleUrls: ['./messages.component.css']
 })
-export class MessagesComponent {
-  constructor(public messageService: MessageService) {}
+export class MessagesComponent implements OnInit {
+  
+  // public parameter can be only binded for template
+  constructor(public messageService: MessageService) { }
+
+  ngOnInit() {
+  }
+
 }
